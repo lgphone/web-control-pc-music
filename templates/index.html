@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main role="main">
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-5">躺着控制电脑音乐</h1>
+            <div style="float: right;font-size: 5px;">by YangEver</div>
+            <br>
+            <a class="btn btn-primary btn-sm" onclick="controlMusic('prev')" href="#" role="button">上一曲</a>
+            <a class="btn btn-success btn-sm" onclick="controlMusic('next')" href="#" role="button">下一曲</a>
+            <a class="btn btn-default btn-sm" onclick="controlMusic('playpause')" href="#" role="button">暂停/播放</a>
+            <hr>
+            <div style="margin-bottom: 5px;">音量控制</div>
+            <a class="btn btn-success btn-sm volume-up" onclick="controlVolume('up')" href="#" role="button">
+                <span class="glyphicon glyphicon-volume-up" style="font-size: 13px;" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+            <a class="btn btn-info btn-sm volume-down" onclick="controlVolume('down')" href="#" role="button">
+                <span class="glyphicon glyphicon-volume-down" style="font-size: 13px;" aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-minus"></span>
+            </a>
+            <a class="btn btn-danger btn-sm volume-mute" onclick="controlVolume('mute')" href="#" role="button">
+                <span class="glyphicon glyphicon-volume-off" style="font-size: 13px; width: 30px;"
+                      aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // get api function
+        function requestAPI(url, data) {
+            $.get(url, data).then(function (resp) {
+                if (resp && resp.status !== 0) {
+                    console.log(resp)
+                    window.alert('请求失败:' + resp.msg)
+                }
+            })
+        }
+
+        function controlVolume(action) {
+            let get_arg = {
+                'action': action
+            }
+            requestAPI('/api/volume', get_arg)
+        }
+
+        function controlMusic(action) {
+            let get_arg = {
+                'action': action
+            }
+            requestAPI('/api/music', get_arg)
+        }
+
+    </script>
+</main>
+{% endblock %}

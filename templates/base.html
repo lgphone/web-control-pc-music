@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>躺着控制电脑音乐播放</title>
+    <link href="{{ url_for('static', path='/css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+
+<body>
+<script src="{{ url_for('static', path='/js/jquery-3.3.1.slim.min.js') }}"></script>
+<script src="{{ url_for('static', path='/js/bootstrap.min.js') }}"></script>
+{% block content %}{% endblock %}
+
+<div style="margin-left: 30px;position: absolute; bottom: 10px">
+    <footer>
+    <p>&copy; 搞着玩</p>
+</footer>
+</div>
+</body>
+</html>

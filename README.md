@@ -20,7 +20,7 @@
 git clone https://github.com/lgphone/web-control-pc-music.git
 cd web-control-pc-music
 python3 -m venv venv
-source test_venv/Scripts/activate  # 不同系统命令不同 都是进入虚拟环境
+source venv/Scripts/activate  # 不同系统命令不同 都是进入虚拟环境
 pip install -r requirements.txt
 python main.py
 ```

@@ -62,7 +62,7 @@ async def index(request):
 
 
 @app.route('/api/music')
-async def prev_api(request):
+async def music_control_api(request):
     action = request.query_params.get('action')
     if action not in ['playpause', 'next', 'prev']:
         return JSONResponse({'status': 1, 'msg': f'控制指令: {action} 非法!'})
@@ -78,7 +78,7 @@ async def prev_api(request):
 
 
 @app.route('/api/volume')
-async def next_api(request):
+async def volume_control_api(request):
     action = request.query_params.get('action')
     if action not in ['up', 'down', 'mute']:
         return JSONResponse({'status': 1, 'msg': f'音量控制指令: {action} 非法!'})

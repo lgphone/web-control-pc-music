@@ -29,6 +29,8 @@ python main.py
 
 #### 界面预览
 * 运行
+
 ![](https://github.com/lgphone/web-control-pc-music/blob/main/doc/pics/run.jpg)
 * web
+
 ![](https://github.com/lgphone/web-control-pc-music/blob/main/doc/pics/web.jpg)
